@@ -16,15 +16,23 @@
     <div class="container"> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"> Open Register Modal </button> </div>
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <div class="modal-content p-4"> <button type="button" class="close x" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+            <div class="modal-content p-4"> 
+                
                 <div class="modal-header border-0 mb-2">
-                    <h5 class="modal-title" id="exampleModalLabel">Daily</h5> <button type="button" class="close" aria-label="Close" disabled='true'> <span aria-hidden="true">Log in</span> </button>
+                    <h4 class="modal-title" id="exampleModalLabel">DTSQ</h4> 
+                    <button type="button" class="close x" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
                 </div>
                 <div class="modal-body">
-                    <h3 class="mb-4 title">New<br />Account</h3>
-                    <div class="form-group"> <input type="text" id="name" class="form-control p-0" required style="box-shadow: none;border-radius:0px"> <label class="form-control-placeholder p-0" for="name lbl">Full Name</label> </div>
+                    <h3 class="mb-4 title">Shop<br />Register</h3>
+                    <div class="form-group"> <input type="text" id="shop_name" class="form-control p-0" required style="box-shadow: none;border-radius:0px"> <label class="form-control-placeholder p-0" for="name lbl">Shop Name</label> </div>
+                    <div class="form-group"> <input type="text" id="owner_name" class="form-control p-0" required style="box-shadow: none;border-radius:0px"> <label class="form-control-placeholder p-0" for="name">Vendor Name</label> </div>
+                    <div class="form-group"> <input type="text" id="shop_password1" class="form-control p-0" required style="box-shadow: none;border-radius:0px"> <label class="form-control-placeholder p-0" for="password">Password</label> </div> 
+                    <div class="form-group"> <input type="text" id="shop_password2" class="form-control p-0" required style="box-shadow: none;border-radius:0px"> <label class="form-control-placeholder p-0" for="password">Confirm Password</label> </div> 
                     <div class="form-group"> <input type="text" id="email" class="form-control p-0" required style="box-shadow: none;border-radius:0px"> <label class="form-control-placeholder p-0" for="name">Email</label> </div>
-                    <div class="form-group"> <input type="text" id="password" class="form-control p-0" required style="box-shadow: none;border-radius:0px"> <label class="form-control-placeholder p-0" for="password">Password</label> </div> <label class="tc">By signing up I accept the <strong>Terms & Conditions</strong> of Daily</label>
+                    <div class="form-group"> <input type="text" id="phone_number" class="form-control p-0" required style="box-shadow: none;border-radius:0px"> <label class="form-control-placeholder p-0" for="name">Mobile Number</label> </div>
+                    <div class="form-group"> <input type="text" id="GST" class="form-control p-0" required style="box-shadow: none;border-radius:0px"> <label class="form-control-placeholder p-0" for="name">GST</label> </div>
+                    <div class="form-group"> <input type="text" id="address" class="form-control p-0" required style="box-shadow: none;border-radius:0px"> <label class="form-control-placeholder p-0" for="password">Password</label> </div> 
+                    <label class="tc">By signing up I accept the <strong>Terms & Conditions</strong> of Daily</label>
                 </div>
                 <div class="modal-footer border-0 mb-4"> <button type="button" class="btn signup col-6 col-md-6" data-dismiss="modal">SIGNUP</button> </div>
             </div>
