@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link th:rel="stylesheet" th:href="@{/css/bootstrap.min.css}"
+	crossorigin="anonymous" />
+<link th:rel="stylesheet" th:href="@{/css/style1.css}"
+	crossorigin="anonymous" />
+
+<title>Karnataka Govt Application</title>
+<script th:src="@{/js/jquery-3.5.1.slim.min.js}" crossorigin="anonymous"></script>
+<script th:src="@{/js/popper.min.js}" crossorigin="anonymous"></script>
+<script th:src="@{/js/bootstrap.min.js}" crossorigin="anonymous"></script>
+<!-- <script th:src="@{/js/validation.js}" crossorigin="anonymous"></script> -->
+</head>
+
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12 d-none d-sm-none d-md-block headerDiv">
+				<img src="img/download.png">
+				<p class="font-weight-normal" style="font-size: 8ch">Karnataka
+					State co-operative Federation Ltd.,</p>
+				<p style="font-size: medium; color: rgb(121, 171, 236);">
+					Diploma in Co-operative Management (Distance Education)</p>
+			</div>
+		</div>
+
+		<!--Nav bar-->
+		<nav class="navbar navbar-expand-lg navbar-dark bg-warning orange">
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarNav" aria-controls="navbarNav"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item"><a class="nav-link" th:href="@{/}">General Details </a></li>
+					<li class="nav-item"><a class="nav-link" th:href="@{/new}">Register</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">Status</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<div class="row">
+			<div class="col-md-2 custLeftDivMD">
+				<fieldset class="border">
+					<legend class='text-left'>Downloads</legend>
+					<ul>
+						<li>Download NOC template</li>
+						<li>Download Service Certificate template</li>
+						<li>Download Application Form</li>
+					</ul>
+				</fieldset>
+
+			</div>
+			<!-- Start of center-->
+
+			<div class="col-md-8 custCentDivMD overflow-auto">
+				<div class="card text-center">
+					<div class="card-header">
+						<ul id="mytabs" class="nav nav-tabs card-header-tabs pull-right"
+							 role="tablist">
+							<li class="nav-item"><a class="nav-link active"
+								id="personal-tab" href="#personal">Personal Details</a></li>
+
+							<li class="nav-item"><a class="nav-link " id="academic-tab"
+								href="#academic">Academic Qualification</a></li>
+
+							<li class="nav-item"><a class="nav-link "
+								id="professional-tab" href="#professional">Professional
+									Details</a></li>
+							<li class="nav-item"><a class="nav-link " id="upload-tab"
+								href="#upload">Upload Section</a></li>
+
+							<li class="nav-item"><a class="nav-link "
+								id="declaration-tab" href="#declaration">Declaration</a></li>
+
+						</ul>
+					</div>
+				<form th:action="@{/save}" class="form-horizontal" role="form" method="POST" enctype="multipart/form-data">
+					<div class="card-body">
+						<div class="tab-content" id="myTabContent">
+							<div class="tab-pane fade show active" id="personal"
+								role="tabpanel" aria-labelledby="personal-tab">
+								<div id="personDetailId">
+									<div class="form-group">
+										<label>Mobile Number/ಮೊಬೈಲ್ ನಂಬರ *</label> <input
+											type="number" id="mobile_number" name="mobile"
+											class="form-control"
+											placeholder="Mobile Number/ಮೊಬೈಲ್ ನಂಬರ"> <small
+											class="form-text text-muted">Register per mobile
+											number </small> <span id="e_mobile"></span>
+									</div>
+
+									<div class="form-group">
+										<label for="exampleInputEmail1">Preference of center *</label>
+										<select class="custom-select" id="poc" name="preOfCenter">
+											<option selected>Choose...</option>
+											<option value="1">One</option>
+											<option value="2">Two</option>
+											<option value="3">Three</option>
+										</select> <span id="e_poc"></span>
+									</div>
+
+
+									<div class="form-group">
+										<label for="exampleInputEmail1">Sponsoring
+											Co-operative Society *</label> <input class="form-control"
+											type="text" name="sponsor" id="sponsor"
+											placeholder="Sponsoring Co-operative Society "> <span
+											id="e_sponsor"></span>
+									</div>
+									<div class="form-group">
+										<label for="exampleInputEmail1">Name of the
+											candidate/ಅರ್ಜಿದಾರರ ಹೆಸರು *</label> <input type="text" name="name"
+											id="name" class="form-control"
+											placeholder="Name of the candidate/ಅರ್ಜಿದಾರರ ಹೆಸರು" /> <span
+											id="e_name"></span>
+									</div>
+									<div class="form-group">
+										<label> Father's Name/ ತಂದೆಯ ಹೆಸರು *</label> <input
+											type="text" name="fatherName" id="father_name"
+											class="form-control" placeholder="Father's Name/ತಂದೆಯ ಹೆಸರು" />
+										<span id="e_father"></span>
+									</div>
+									<div class="form-group">
+										<label>Mother's Name/ ತಾಯಿಯ ಹೆಸರು</label> <input type="text"
+											name="motherName" id="mother_name" class="form-control"
+											placeholder="Mother's Name/ತಾಯಿಯ ಹೆಸರು" /> <span
+											id="e_mother"></span>
+									</div>
+									<div class="form-group">
+										<label>Gender *</label> <select name="gender" id="sex"
+											class="custom-select">
+											<option slected value="">Gender</option>
+											<option value="M">Male</option>
+											<option value="F">Female</option>
+											<option value="T">Transgender</option>
+										</select> <span id="e_sex"></span>
+									</div>
+									<div class="form-group">
+										<label>D.O.B/ಹುಟ್ತಿದ ದಿನ *</label> <input type="date" id="dob"
+											name="dob" class="form-control"  pattern="yyyy-MM-dd"> <span
+											id="e_dob"></span>
+									</div>
+									<div class="form-group">
+										<label>Age/ವಯಸ್ಸು *</label> <input type="number" id="age"
+											name="age" class="form-control" placeholder="Age/ವಯಸ್"
+											> <span id="e_age"></span>
+									</div>
+									<div class="form-group">
+										<label>Religion/ಧರ್ಮ *</label> <input type="text"
+											id="religion" name="religion" class="form-control"
+											placeholder="Religion/ಧರ್ಮ"> <span id="e_religion"></span>
+									</div>
+									<div class="form-group">
+										<label>Caste/ಜಾತಿ *</label> <select name="caste" id="caste"
+											class="form-control" onchange="changestatus()">
+											<option slected value="">Cast/ಜಾತಿ</option>
+											<option value="GM">GM</option>
+											<option value="SC">SC</option>
+											<option value="ST">ST</option>
+											<option value="O">Others</option>
+										</select> <input type="text" id="other" name="other"
+											class="form-control" placeholder="Enter Other caste">
+										<span id="e_caste"></span>
+									</div>
+									<div class="form-group">
+										<label>Nationality/ರಾಷ್ಟ್ರೀಯತೆ *</label> <input type="text"
+											id="nationality" name="nationality" class="form-control"
+											placeholder="Nationality/ರಾಷ್ಟ್ರೀಯತೆ"> <span
+											id="e_nationality"></span>
+									</div>
+									<div class="form-group">
+										<label>Address/ವಿಳಾಸ *</label>
+										<textarea id="address" name="resAddress" rows="3"
+											class="form-control" placeholder="address/ವಿಳಾಸ"> </textarea>
+										<span id="e_address"></span>
+									</div>
+									<div class="form-group">
+										<label>Pincode/ಅಂಚೆ *</label> <input type="number"
+											id="pincode" name="pincode" class="form-control"
+											placeholder="pincode/ಅಂಚೆ"> <span id="e_pincode"></span>
+									</div>
+									<div class="form-group">
+										<label>E-Mail Address/ಇಮೇಲ್ ವಿಳಾಸ *</label> <input
+											type="email" id="email" name="email" class="form-control"
+											placeholder="E-Mail/ಇಮೇಲ್ ವಿಳಾಸ"> <span
+											id="e_email"></span>
+									</div>
+									
+									<div class="form-group">
+									<label>MarksCard/Certificate *</label> <input type="file"
+										id="sslc_certificate" name="sslcFile"
+										class="form-control" onchange="ValidateSize(this)"> <span
+										id="e_sslc_certificate"></span>
+								</div>
+								
+								<div class="form-group">
+									<label>MarksCard/Certificate</label> <input type="file"
+										id="ug_certificate" name="ugFile" class="form-control"
+										onchange="ValidateSize(this)"> <span
+										id="e_ug_certificate"></span>
+								</div>
+								
+								<div class="form-group">
+									<label>MarksCard/Certificate</label> <input type="file"
+										id="pg_certificate" name="pgFile" class="form-control"
+										onchange="ValidateSize(this)"> <span
+										id="e_pg_certificate"></span>
+								</div>
+								
+								<div class="form-group">
+									<label>Photo</label> <input type="file" name="photoFile" id="photo"
+										class="form-control" onchange="ValidateSize(this)"> <span></span>
+								</div>
+								<div class="form-group">
+									<label>Address Proof</label> <input type="file"
+										name="addressFile" id="address_proof" class="form-control"
+										onchange="ValidateSize(this)"> <span></span>
+								</div>
+								<div class="form-group">
+									<label>Empolyee Certificare</label> <input type="file"
+										name="certificateFile" id="e_certificate" class="form-control"
+										onchange="ValidateSize(this)"> <span></span>
+								</div>
+								<div class="form-group">
+									<label>MarksCard/Certificate</label> <input type="file"
+										id="puc_certificate" name="pucFile"
+										class="form-control" onchange="ValidateSize(this)"> <span
+										id="e_puc_certificate"></span>
+								</div>
+
+
+									<button type="button" id="changetabbutton1"
+										class="btn btn-primary ">Continue</button>
+										
+										<button type="submit" id="changetabbutton5"
+									class="btn btn-primary ">Submit</button>
+
+								</div>
+							</div>
+							
+
+						</div>
+					</div>
+				</div>
+				</form>
+			</div>
+
+			<div class="col-md-2 custRightDivMD">
+				<fieldset class="border">
+					<legend class='text-left'>Events</legend>
+					Right
+				</fieldset>
+			</div>
+		</div>
+
+		<hr class="mt-2 mb-3" />
+		<div class="row">
+			<div class="col-md-12 footerDiv">footer</div>
+		</div>
+	</div>
+
+	</div>
+
+
+</body>
+
+</html>

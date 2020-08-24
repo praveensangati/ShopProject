@@ -1,0 +1,70 @@
+nav a{
+    color: white !important;
+    font-size: 1.2em !important;
+}
+
+.headerDiv{
+    min-height: 100px;
+    text-align: center;
+    background-color:white ;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.headerDivSmall{
+    text-align: center;
+    background-color: #666;
+    margin-top: 2%;
+}
+
+#other{
+    visibility: hidden;
+}
+.custLeftDivMD{
+    min-height: 400px;
+    text-align: left;
+    
+    margin-top: 1ch;
+}
+
+.custCentDivMD{
+    min-height: 400px;
+    max-height: 600px;
+    text-align: left;
+    
+    margin-top: 1ch;
+}
+
+.custRightDivMD{
+    min-height: 400px;
+    text-align: left;
+    /* background-color:; */
+    margin-top: 1ch;
+}
+
+.fieldset{
+    background: url("https://images.pexels.com/photos/518543/pexels-photo-518543.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:cover;
+}
+ p#innerPara{padding:20px ;}
+ legend{width:200px;padding:10px 20px;}
+
+
+.footerDiv{
+    min-height: 100px;
+    text-align: left;
+    background-color: rgb(72, 72, 73);
+    margin-top: 2%;
+    margin-top: 0ch;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

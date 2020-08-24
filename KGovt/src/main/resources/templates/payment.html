@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link th:rel="stylesheet" th:href="@{/css/bootstrap.min.css}"
+	crossorigin="anonymous" />
+<link th:rel="stylesheet" th:href="@{/css/style1.css}"
+	crossorigin="anonymous" />
+
+<title>Karnataka Govt Application</title>
+<script th:src="@{/js/jquery-3.5.1.slim.min.js}" crossorigin="anonymous"></script>
+<script th:src="@{/js/popper.min.js}" crossorigin="anonymous"></script>
+<script th:src="@{/js/bootstrap.min.js}" crossorigin="anonymous"></script>
+<script th:src="@{/js/checkout.js}" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+<span id="id" style="display: none;" th:text="${order_id}"></span>
+<span id="key" style="display: none;" th:text="${key}"></span>
+<span id="amount" style="display: none;" th:text="${amount}"></span>
+</body>
+<script>
+var options = {
+		"key" : $('#key').text() ,
+		"amount":$('#amount').text(), // Example: 2000 paise = INR 20
+		"name" : "Appito",
+		"description" : "description",
+		"image" : "img/logo.png",
+		"order_id" : $('#order_id').text(),
+		"handler" : function(response) {
+			alert(response.razorpay_payment_id);
+			alert(response.razorpay_order_id);
+			alert(response.razorpay_signature)
+			console.log(response);
+			// AFTER TRANSACTION IS COMPLETE YOU WILL GET THE RESPONSE HERE.
+		},
+		"prefill" : {
+			"name" : "ABC", // pass customer name
+			"email" : 'A@A.COM',// customer email
+			"contact" : '+919123456780' //customer phone no.
+		},
+		"notes" : {
+			"address" : "address" //customer address 
+		},
+		"theme" : {
+			"color" : "#15b8f3" // screen color
+		}
+	};
+	var propay = new Razorpay(options);
+	propay.open();
+	$('body').html('');
+</script>
+</html>
