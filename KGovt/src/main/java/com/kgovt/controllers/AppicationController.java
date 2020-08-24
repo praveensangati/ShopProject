@@ -80,56 +80,49 @@ public class AppicationController extends AppConstants{
 			if(!sslcFile.isEmpty()) {
 				String sslcFilePath = fileUploadAndReturn(sslcFile, String.valueOf(applicationDetailes.getMobile()), "SSLC");
 				if(AppUtilities.isNotNullAndNotEmpty(sslcFilePath)) {
-					applicationDetailes.setSslcFileName(sslcFile.getName());
-					System.out.print(sslcFilePath);
+					applicationDetailes.setSslcFileName(sslcFilePath);
 				}	
 			}
 			
 			if(!pucFile.isEmpty()) {
-				String filePath = fileUploadAndReturn(sslcFile, String.valueOf(applicationDetailes.getMobile()), "PUC");
+				String filePath = fileUploadAndReturn(pucFile, String.valueOf(applicationDetailes.getMobile()), "PUC");
 				if(AppUtilities.isNotNullAndNotEmpty(filePath)) {
-					applicationDetailes.setPucFileName(pucFile.getName());
-					System.out.print(filePath);
+					applicationDetailes.setPucFileName(filePath);
 				}	
 			}
 			
 			if(!ugFile.isEmpty()) {
-				String filePath = fileUploadAndReturn(sslcFile, String.valueOf(applicationDetailes.getMobile()), "UG");
+				String filePath = fileUploadAndReturn(ugFile, String.valueOf(applicationDetailes.getMobile()), "UG");
 				if(AppUtilities.isNotNullAndNotEmpty(filePath)) {
-					applicationDetailes.setUgFileName(ugFile.getName());
-					System.out.print(filePath);
+					applicationDetailes.setUgFileName(filePath);
 				}	
 			}
 			
 			if(!pgFile.isEmpty()) {
-				String filePath = fileUploadAndReturn(sslcFile, String.valueOf(applicationDetailes.getMobile()), "PG");
+				String filePath = fileUploadAndReturn(pgFile, String.valueOf(applicationDetailes.getMobile()), "PG");
 				if(AppUtilities.isNotNullAndNotEmpty(filePath)) {
-					applicationDetailes.setPgFileName(pgFile.getName());
-					System.out.print(filePath);
+					applicationDetailes.setPgFileName(filePath);
 				}	
 			}
 			
 			if(!photoFile.isEmpty()) {
-				String filePath = fileUploadAndReturn(sslcFile, String.valueOf(applicationDetailes.getMobile()), "PHOTO");
+				String filePath = fileUploadAndReturn(photoFile, String.valueOf(applicationDetailes.getMobile()), "PHOTO");
 				if(AppUtilities.isNotNullAndNotEmpty(filePath)) {
-					applicationDetailes.setPhotoFileName(photoFile.getName());
-					System.out.print(filePath);
+					applicationDetailes.setPhotoFileName(filePath);
 				}	
 			}
 			
 			if(!addressFile.isEmpty()) {
-				String filePath = fileUploadAndReturn(sslcFile, String.valueOf(applicationDetailes.getMobile()), "ADDRESS");
+				String filePath = fileUploadAndReturn(addressFile, String.valueOf(applicationDetailes.getMobile()), "ADDRESS");
 				if(AppUtilities.isNotNullAndNotEmpty(filePath)) {
-					applicationDetailes.setAddressFileName(addressFile.getName());
-					System.out.print(filePath);
+					applicationDetailes.setAddressFileName(filePath);
 				}	
 			}
 			
 			if(!certificateFile.isEmpty()) {
-				String filePath = fileUploadAndReturn(sslcFile, String.valueOf(applicationDetailes.getMobile()), "CERTIFICATE");
+				String filePath = fileUploadAndReturn(certificateFile, String.valueOf(applicationDetailes.getMobile()), "CERTIFICATE");
 				if(AppUtilities.isNotNullAndNotEmpty(filePath)) {
-					applicationDetailes.setServiceCertFileName(certificateFile.getName());
-					System.out.print(filePath);
+					applicationDetailes.setServiceCertFileName(filePath);
 				}	
 			}
 			
@@ -165,13 +158,15 @@ public class AppicationController extends AppConstants{
 					byte[] bytes = file.getBytes();
 					// Creating the directory to store file
 					String rootPath = System.getProperty("catalina.home");
-					File dir = new File(rootPath + File.separator + "tmpFiles" + File.separator + mobile+ File.separator + fileFoler);
+					//File dir = new File(rootPath + File.separator + "tmpFiles" + File.separator + mobile+ File.separator + fileFoler);
+					String folder2Store=rootPath + File.separator + fileFoler+ File.separator ;
+					String fileName=mobile+ "-" + file.getOriginalFilename();
+					File dir = new File(folder2Store);
 					if (!dir.exists())
 						dir.mkdirs();
 
 					// Create the file on server
-					File serverFile = new File(dir.getAbsolutePath()
-							+ File.separator + file.getName());
+					File serverFile = new File(dir.getAbsolutePath()+File.separator+fileName);
 					BufferedOutputStream stream = new BufferedOutputStream(
 							new FileOutputStream(serverFile));
 					stream.write(bytes);
@@ -180,7 +175,7 @@ public class AppicationController extends AppConstants{
 					logger.info("Server File Location="
 							+ serverFile.getAbsolutePath());
 					path = serverFile.getAbsolutePath();
-					return path;
+					return fileName;
 				} catch (Exception e) {
 					return null;
 				}
@@ -190,7 +185,7 @@ public class AppicationController extends AppConstants{
 		}catch(Exception e) {
 			
 		}
-		return path;
+		return null;
 	}
 	
 	@PostMapping("/testSave")
