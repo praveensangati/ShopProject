@@ -1,0 +1,19 @@
+.close {
+    color:darkorange;
+    font-size: 30px;
+    position: relative;
+}
+
+
+.modal-title {
+    color: darkorange;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 1.5rem
+}
+
+body {
+    background-color: white
+}

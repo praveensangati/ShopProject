@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+    <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
+    <link rel="stylesheet" href="css/styles2.css">
+</head>
+<body>
+    <div class="container"> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"> Open Register Modal </button> </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content p-4"> 
+                
+                <div class="modal-header border-0 mb-2">
+                    <h4 class="modal-title" id="exampleModalLabel">DTSQ</h4> 
+                    <button type="button" class="close x" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                </div>
+                <div class="modal-body">
+                    <h3 class="mb-4 title">Shop<br />Register</h3>
+                    <div class="form-group"> <input type="text" id="shop_name" class="form-control p-0" required style="box-shadow: none;border-radius:0px"> <label class="form-control-placeholder p-0" for="name lbl">Shop Name</label> </div>
+                    <div class="form-group"> <input type="text" id="owner_name" class="form-control p-0" required style="box-shadow: none;border-radius:0px"> <label class="form-control-placeholder p-0" for="name">Vendor Name</label> </div>
+                    <div class="form-group"> <input type="text" id="shop_password1" class="form-control p-0" required style="box-shadow: none;border-radius:0px"> <label class="form-control-placeholder p-0" for="password">Password</label> </div> 
+                    <div class="form-group"> <input type="text" id="shop_password2" class="form-control p-0" required style="box-shadow: none;border-radius:0px"> <label class="form-control-placeholder p-0" for="password">Confirm Password</label> </div> 
+                    <div class="form-group"> <input type="text" id="email" class="form-control p-0" required style="box-shadow: none;border-radius:0px"> <label class="form-control-placeholder p-0" for="name">Email</label> </div>
+                    <div class="form-group"> <input type="text" id="phone_number" class="form-control p-0" required style="box-shadow: none;border-radius:0px"> <label class="form-control-placeholder p-0" for="name">Mobile Number</label> </div>
+                    <div class="form-group"> <input type="text" id="GST" class="form-control p-0" required style="box-shadow: none;border-radius:0px"> <label class="form-control-placeholder p-0" for="name">GST</label> </div>
+                    <div class="form-group"> <input type="text" id="address" class="form-control p-0" required style="box-shadow: none;border-radius:0px"> <label class="form-control-placeholder p-0" for="password">Password</label> </div> 
+                    <label class="tc">By signing up I accept the <strong>Terms & Conditions</strong> of Daily</label>
+                </div>
+                <div class="modal-footer border-0 mb-4"> <button type="button" class="btn signup col-6 col-md-6" data-dismiss="modal">SIGNUP</button> </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
